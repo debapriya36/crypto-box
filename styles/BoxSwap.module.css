@@ -1,0 +1,393 @@
+.background {
+  background: radial-gradient(circle at top center, #0f1939 0%, #101014 100%);
+  min-height: 100vh;
+}
+
+.swapArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.betweenBoxes {
+  margin: 0px 50px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.root {
+  --glow-color: #309eed;
+}
+
+.glowingBtn {
+  margin-top: 30px;
+  position: relative;
+  color: var(--glow-color);
+  cursor: pointer;
+  padding: 8px 30px;
+  border: 0.15em solid var(--glow-color);
+  border-radius: 30px;
+  background: none;
+  perspective: 2em;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+
+  text-align: center;
+  display: inline-block;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  /* animation: border-flicker 2s linear infinite; */
+}
+
+.glowingTxt {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  float: left;
+  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+  /* animation: text-flicker 3s linear infinite; */
+}
+
+.faultyLetter {
+  background: transparent;
+  opacity: 0.5;
+}
+
+.glowingBtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 2em 0.2em var(--glow-color);
+  transition: opacity 100ms linear;
+  border-radius: 30px;
+}
+
+.glowingBtn:hover {
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
+  animation: none;
+}
+
+.glowingBtn:hover .glowing-txt {
+  animation: none;
+}
+
+.glowingBtn:hover .faulty-letter {
+  animation: none;
+  text-shadow: none;
+  opacity: 1;
+}
+
+.glowingBtn:hover:before {
+  filter: blur(1.5em);
+  opacity: 1;
+}
+
+.glowingBtn:hover:after {
+  opacity: 1;
+}
+
+@keyframes faulty-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 0.1;
+  }
+  4% {
+    opacity: 0.5;
+  }
+  19% {
+    opacity: 0.5;
+  }
+  21% {
+    opacity: 0.1;
+  }
+  23% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  83% {
+    opacity: 0.4;
+  }
+
+  87% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  8% {
+    opacity: 0.1;
+  }
+
+  9% {
+    opacity: 1;
+  }
+
+  12% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+  72% {
+    opacity: 0.2;
+  }
+
+  77% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes border-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.1;
+  }
+
+  8% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.boxType {
+  margin: 20px 40px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: left;
+  color: rgba(240, 248, 255, 0.6);
+  background: transparent;
+}
+
+.boxName {
+  border: none;
+  cursor: pointer;
+  margin: 0px 30px;
+  margin-bottom: 10px;
+  font-size: 26px;
+  font-weight: 500;
+  text-align: center;
+  color: rgba(240, 248, 255, 0.9);
+  background: rgba(0, 0, 0, 0.15);
+  padding: 6px 20px;
+  border-radius: 40px;
+  width: 240px;
+}
+
+.infoArea {
+  padding: 0px 25px;
+  color: aliceblue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  background: transparent;
+}
+
+.infoBox {
+  padding: 5px;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+}
+
+.priceInfo2 {
+  margin: 10px 10px;
+  margin-right: 20px;
+}
+.infoHeader2 {
+  font-size: 12px;
+  background: transparent;
+  color: rgba(240, 248, 255, 0.8);
+}
+
+.infoAmount2 {
+  font-size: 20px;
+  font-weight: 500;
+  background: transparent;
+  color: rgba(44, 209, 93, 0.8);
+}
+
+.infoAmount3 {
+  font-size: 20px;
+  font-weight: 500;
+  background: transparent;
+  color: rgba(240, 248, 255, 0.8);
+}
+
+.info {
+  padding: 5px 10px;
+  margin: 5px;
+  background-color: transparent;
+}
+
+.infoHeader {
+  font-size: 11px;
+  background-color: transparent;
+}
+
+.infoAmount {
+  background-color: transparent;
+  font-size: 13px;
+  color: rgba(240, 248, 255, 0.75);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownContent {
+  width: 100%;
+  height: 154px;
+  overflow-y: scroll;
+  text-align: center;
+  text-decoration: none;
+}
+
+.dropdownContent::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+.dropdownContent::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: rgba(240, 248, 255, 0.2);
+}
+
+.dropdownContent::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(240, 248, 255, 0.4);
+}
+
+.dropdownContentBox {
+  display: block;
+  list-style-type: none;
+  position: absolute;
+  background-color: hsla(0, 0%, 0%, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  width: 100%;
+  height: 154px;
+  border-radius: 40px;
+  padding: 30px 0px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdownContentItems {
+  border: none;
+  list-style-type: none;
+  cursor: pointer;
+  padding: 10px 10px;
+  margin: 0px 30px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+}
+
+.dropdownBoxName {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0px 20px;
+  text-align: center;
+}
+
+.dropdownBoxId {
+  font-size: 12px;
+  font-weight: 300;
+  margin: 0px 20px;
+  text-align: right;
+}
+
+.connectWalletBody {
+  margin: 100px 100px;
+  padding: 150px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 40px;
+}
+
+.connectWalletBodyText {
+  background: transparent;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(240, 248, 255, 0.587);
+}
+
+.loadingScreen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(240, 248, 255, 0.9);
+}
