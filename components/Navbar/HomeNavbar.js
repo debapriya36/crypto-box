@@ -14,7 +14,7 @@ const HomeNavbar = () => {
         <li className={styles.navlistitem}>
           <a
             className={styles.navText}
-            href={DOCS_LINK}
+            href="https://github.com/debapriya36/crypto-box"
             target="_blank"
             rel="noreferrer"
           >
