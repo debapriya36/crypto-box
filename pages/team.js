@@ -71,9 +71,9 @@ export default function Team() {
             name="Prof. Debamita Saha"
             image="./ds.jpg"
             bio={"Assistant Professor, Department of Information Technology, JGEC"}
-            linkedin={GAURAV.LINKEDIN}
-            twitter={GAURAV.TWITTER}
-            instagram={GAURAV.INSTAGRAM}
+            // linkedin={GAURAV.LINKEDIN}
+            // twitter={GAURAV.TWITTER}
+            // instagram={GAURAV.INSTAGRAM}
             email={GAURAV.EMAIL}
           />
 
