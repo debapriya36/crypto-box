@@ -69,12 +69,9 @@ export default function Team() {
           
         <TeamCard
             name="Prof. Debamita Saha"
-            image="./ds.jpg"
+            image="./DS.jpeg"
             bio={"Assistant Professor, Department of Information Technology, JGEC"}
-            // linkedin={GAURAV.LINKEDIN}
-            // twitter={GAURAV.TWITTER}
-            // instagram={GAURAV.INSTAGRAM}
-            email={GAURAV.EMAIL}
+            email={DEBAPRIYA.EMAIL}
           />
 
           <TeamCard
